@@ -13,20 +13,61 @@
     "run": {
       "label": "Running & Hyrox",
       "options": [
-        { "label": "1 month", "months": 1, "price": 6000, "stripe": "https://buy.stripe.com/cN2dSKflL6SL4TuaEK" },
-        { "label": "3 months", "months": 3, "price": 16500, "stripe": "https://buy.stripe.com/3cs4iaa1r7WPeu4dQX" },
-        { "label": "6 months", "months": 6, "price": 30000, "stripe": "https://buy.stripe.com/28ocOG3D3gtl71C4go" },
-        { "label": "12 months", "months": 12, "price": 54000, "stripe": "https://buy.stripe.com/14k2a28Xneld99K8wF" }
+        {
+          "label": "1 month",
+          "months": 1,
+          "price": 6000,
+          "stripe": "https://buy.stripe.com/cN2dSKflL6SL4TuaEK"
+        },
+        {
+          "label": "3 months",
+          "months": 3,
+          "price": 16500,
+          "stripe": "https://buy.stripe.com/3cs4iaa1r7WPeu4dQX"
+        },
+        {
+          "label": "6 months",
+          "months": 6,
+          "price": 30000,
+          "stripe": "https://buy.stripe.com/28ocOG3D3gtl71C4go"
+        },
+        {
+          "label": "12 months",
+          "months": 12,
+          "price": 54000,
+          "stripe": "https://buy.stripe.com/14k2a28Xneld99K8wF"
+        }
       ]
     },
     "tri": {
       "label": "Triathlon",
       "options": [
-        { "label": "1 month", "months": 1, "price": 8000, "stripe": "" },
-        { "label": "3 months", "months": 3, "price": 22000, "stripe": "" },
-        { "label": "6 months", "months": 6, "price": 40000, "stripe": "" },
-        { "label": "12 months", "months": 12, "price": 72000, "stripe": "" }
+        {
+          "label": "1 month",
+          "months": 1,
+          "price": 8000,
+          "stripe": "https://buy.stripe.com/fZu4gB0ZccqG8OJ0E1fMA0a"
+        },
+        {
+          "label": "3 months",
+          "months": 3,
+          "price": 22000,
+          "stripe": "https://buy.stripe.com/dRmdRb8rE2Q6e93cmJfMA0b"
+        },
+        {
+          "label": "6 months",
+          "months": 6,
+          "price": 40000,
+          "stripe": "https://buy.stripe.com/3cI28t23g2Q64yt2M9fMA0c"
+        },
+        {
+          "label": "12 months",
+          "months": 12,
+          "price": 72000,
+          "stripe": "https://buy.stripe.com/4gMcN70Zcaiye935YlfMA0d"
+        }
       ]
     }
-  }
+  },
+  "address": "G1, Nirvana Apartment, MLA Colony, Road No 12, Banjara Hills, Hyderabad 500034, Telangana, India"
 }
