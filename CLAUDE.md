@@ -18,7 +18,7 @@ The coaching website for Gautam Pothineni (Coached by Pondi Express), replacing 
 ## Things that must not change
 - URLs: `/sign-up/`, `/about/`, `/contact/`, `/termsofuse/` and the four `/blog/<slug>/` posts kept their Squarespace addresses.
 - `/termsofuse/` text is Gautam's legal/refund/privacy policy and covers his mobile app. Copy it verbatim; only fix broken links.
-- The street address on `/contact/` is required by the payment gateway.
+- The street address (`site.address`) is required by the payment gateway. It appears under Queries/Grievance officer on `/termsofuse/`, not on `/contact/`.
 
 ## Prices (src/_data/site.json)
 - Running & Hyrox: ₹6,000 / ₹16,500 / ₹30,000 / ₹54,000 for 1 / 3 / 6 / 12 months.
