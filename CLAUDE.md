@@ -26,7 +26,7 @@ The coaching website for Gautam Pothineni (Coached by Pondi Express), replacing 
 - Stripe payment links for both are in site.json.
 
 ## Booking calls
-- Currently Calendly (`site.calendly`). Gautam may switch to a Google Calendar appointment schedule: put its booking page link in `site.googleBooking` and the Plans page uses it instead.
+- Google Calendar appointment schedule (`site.googleBooking`, short link https://calendar.app.google/AvJo1LqW9PgvkTWg8) is embedded on the Plans page. Calendly (`site.calendly`) is only used if `googleBooking` is empty.
 
 ## Pending
 - Cloudflare Pages project to be connected (build `npm run build`, output `_site`, `NODE_VERSION=22`), checked on the `.pages.dev` address, then pondiexpress.com pointed at it. The domain is on Squarespace Domains; email is Google Workspace, so leave the MX records alone when changing DNS.
