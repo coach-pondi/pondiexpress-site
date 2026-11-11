@@ -16,13 +16,6 @@
   --fs-num: 2.3rem;       /* prices */
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f171b; --surface: #162228; --ink: #e5eeef; --muted: #98aab0; --line: #26363d;
-    --teal: #3db8af; --teal-ink: #06201e; --teal-soft: #17363a; --slate: #1b2b33; --slate-ink: #e5eeef;
-    color-scheme: dark;
-  }
-}
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 90px; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: var(--fs-md); line-height: 1.6; }

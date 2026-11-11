@@ -13,7 +13,7 @@ The coaching website for Gautam Pothineni (Coached by Pondi Express), replacing 
 ## Design
 - Fonts: Barlow Condensed (headings), Barlow (body), JetBrains Mono (paces). Gautam tried rounder fonts and preferred these.
 - All text sizes come from the `--fs-*` tokens in `src/css/site.css`. Don't add hard-coded font sizes.
-- Teal-and-slate palette with light and dark modes. Buttons are pills.
+- Teal-and-slate palette, always light mode (Gautam chose light for everyone; no dark mode). Buttons are pills.
 
 ## Things that must not change
 - URLs: `/sign-up/`, `/about/`, `/contact/`, `/termsofuse/` and the four `/blog/<slug>/` posts kept their Squarespace addresses.
