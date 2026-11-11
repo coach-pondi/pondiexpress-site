@@ -29,6 +29,6 @@ The coaching website for Gautam Pothineni (Coached by Pondi Express), replacing 
 - Google Calendar appointment schedule (`site.googleBooking`, short link https://calendar.app.google/AvJo1LqW9PgvkTWg8) is embedded on the Plans page. Calendly (`site.calendly`) is only used if `googleBooking` is empty.
 
 ## Pending
-- Cloudflare Pages project to be connected (build `npm run build`, output `_site`, `NODE_VERSION=22`), checked on the `.pages.dev` address, then pondiexpress.com pointed at it. The domain is on Squarespace Domains; email is Google Workspace, so leave the MX records alone when changing DNS.
+- Live on Cloudflare Pages (project `pondiexpress`, build `npm run build`, output `_site`, `NODE_VERSION=22`) at pondiexpress.com and www.pondiexpress.com since 11 Nov 2026. DNS is on Cloudflare (nameservers aldo/lila); the domain registration is still with Squarespace Domains until renewal. Google Workspace MX and SPF records live in Cloudflare DNS: never delete them. DKIM not set up yet.
 - New athlete testimonials to add when Gautam sends them.
 - Squarespace plan auto-renew is off; it runs until May 2027 as a fallback.
