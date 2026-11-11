@@ -257,3 +257,29 @@ details p { margin: 0 0 16px; }
   .post-body { gap: 1em; }
   .band .inner { padding-block: 36px; }
 }
+
+/* real blueprint on the home page */
+.bp-sheet { max-width: 920px; }
+.goals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 6px 0 16px; }
+.goals > div { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; display: grid; gap: 2px; align-content: start; }
+.goals .main { background: var(--teal-soft); border-color: transparent; }
+.g-val { font-size: var(--fs-lg); font-weight: 600; }
+.g-sub { font-size: var(--fs-sm); color: var(--muted); }
+.bp-table td:first-child { font-weight: 600; }
+.bp-table tr.crux td { background: var(--teal-soft); }
+.bp-table tr.crux td:first-child { border-radius: 6px 0 0 6px; }
+.sheet-note { margin-top: 12px; }
+@media (max-width: 600px) {
+  .sheet { padding: 16px; }
+  .goals { grid-template-columns: 1fr; }
+  .bp-table thead { display: none; }
+  .bp-table, .bp-table tbody, .bp-table tr, .bp-table td { display: block; width: 100%; }
+  .bp-table tr { display: grid; grid-template-columns: auto 1fr auto; column-gap: 10px; padding: 12px 10px; border-top: 1px solid var(--line); }
+  .bp-table td { border: 0; padding: 0; }
+  .bp-table td:nth-child(1) { grid-column: 1 / span 2; }
+  .bp-table td:nth-child(2) { grid-column: 3; grid-row: 1; color: var(--muted); text-align: right; }
+  .bp-table td:nth-child(3) { grid-column: 1 / -1; color: var(--teal); font-weight: 600; }
+  .bp-table td:nth-child(4) { grid-column: 1 / -1; color: var(--muted); }
+  .bp-table tr.crux { background: var(--teal-soft); border-radius: 8px; }
+  .bp-table tr.crux td { background: none; }
+}
