@@ -283,3 +283,12 @@ details p { margin: 0 0 16px; }
   .bp-table tr.crux { background: var(--teal-soft); border-radius: 8px; }
   .bp-table tr.crux td { background: none; }
 }
+
+/* race list: compact on phones, first 8 shown until expanded */
+.races-more { display: none; }
+@media (max-width: 600px) {
+  .races { gap: 6px; }
+  .race { padding: 5px 10px; font-size: var(--fs-sm); }
+  .races.collapsed .race:nth-child(n+9) { display: none; }
+  .races-more:not([hidden]) { display: inline-flex; margin-top: 14px; padding: 8px 16px; font-size: var(--fs-sm); }
+}
