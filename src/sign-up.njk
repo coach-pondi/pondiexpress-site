@@ -57,9 +57,13 @@ hideBand: true
     <p class="eyebrow">Not sure yet?</p>
     <h2>Book a free 30-minute call</h2>
     <p class="lede">Tell me about your training, your goals and your week. I'll explain how I'd approach it, and you can decide if coaching is right for you.</p>
-    <p><a href="{{ site.calendly }}" rel="noopener">Open the calendar in a new tab</a></p>
+    <p><a href="{{ site.googleBooking or site.calendly }}" rel="noopener">Open the calendar in a new tab</a></p>
   </div>
+  {%- if site.googleBooking %}
+  <iframe class="booking-frame" src="{{ site.googleBooking }}{{ '&' if '?' in site.googleBooking else '?' }}gv=true" title="Book a free 30-minute call" loading="lazy"></iframe>
+  {%- else %}
   <div class="calendly-inline-widget" data-url="{{ site.calendly }}?hide_gdpr_banner=1&amp;primary_color=0e7a75"></div>
+  {%- endif %}
 </div></section>
 
 <section><div class="wrap">
@@ -80,4 +84,4 @@ hideBand: true
   show(location.hash==='#triathlon'?'tri':'run');
 })();
 </script>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+{% if not site.googleBooking %}<script src="https://assets.calendly.com/assets/external/widget.js" async></script>{% endif %}
