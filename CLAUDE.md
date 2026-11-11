@@ -1,6 +1,6 @@
 # Pondi Express website — working notes
 
-The coaching website for Gautam Pothineni (Coached by Pondi Express), replacing the old Squarespace site at www.pondiexpress.com. Built with Eleventy 3, hosted on Cloudflare Pages from this repo's `main` branch. See README.md for where each page lives.
+The coaching website for Gautam Pothineni (Coached by PondiExpress), replacing the old Squarespace site at www.pondiexpress.com. Built with Eleventy 3, hosted on Cloudflare Pages from this repo's `main` branch. See README.md for where each page lives.
 
 ## Voice and copy
 - Write in Gautam's own plain coaching voice. No slogans, punchy taglines or AI-sounding phrasing.
@@ -11,6 +11,7 @@ The coaching website for Gautam Pothineni (Coached by Pondi Express), replacing 
 - Strength and nutrition are part of every plan, never sold separately.
 
 ## Design
+- Brand name is written as one word, PondiExpress (header shows Pondi in slate, Express in teal). Exceptions: the terms page text and Deepesh Shah's testimonial keep "Pondi Express" as originally written.
 - Fonts: Barlow Condensed (headings), Barlow (body), JetBrains Mono (paces). Gautam tried rounder fonts and preferred these.
 - All text sizes come from the `--fs-*` tokens in `src/css/site.css`. Don't add hard-coded font sizes.
 - Teal-and-slate palette, always light mode (Gautam chose light for everyone; no dark mode). Buttons are pills.
