@@ -292,3 +292,8 @@ details p { margin: 0 0 16px; }
   .races.collapsed .race:nth-child(n+9) { display: none; }
   .races-more:not([hidden]) { display: inline-flex; margin-top: 14px; padding: 8px 16px; font-size: var(--fs-sm); }
 }
+
+/* home photo on phones and tablets: show the whole picture, no cropping */
+@media (max-width: 820px) {
+  .hero .pic { aspect-ratio: auto; height: auto; max-height: none; object-fit: contain; }
+}
