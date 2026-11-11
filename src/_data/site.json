@@ -1,0 +1,31 @@
+{
+  "name": "Pondi Express",
+  "url": "https://www.pondiexpress.com",
+  "defaultDescription": "1:1 endurance coaching from Gautam Pothineni, RRCA certified running coach and Precision Nutrition Level 1 coach. Running, Hyrox and triathlon, coaching athletes since 2020.",
+  "email": "coach@pondiexpress.com",
+  "phone": "+91 99592 43331",
+  "whatsapp": "https://wa.me/919959243331",
+  "calendly": "https://calendly.com/coach-pondiexpress/30min",
+  "instagram": "https://www.instagram.com/pondiexpress/",
+  "strava": "https://www.strava.com/athletes/13973790",
+  "plans": {
+    "run": {
+      "label": "Running & Hyrox",
+      "options": [
+        { "label": "1 month", "months": 1, "price": 6000, "stripe": "https://buy.stripe.com/cN2dSKflL6SL4TuaEK" },
+        { "label": "3 months", "months": 3, "price": 16500, "stripe": "https://buy.stripe.com/3cs4iaa1r7WPeu4dQX" },
+        { "label": "6 months", "months": 6, "price": 30000, "stripe": "https://buy.stripe.com/28ocOG3D3gtl71C4go" },
+        { "label": "12 months", "months": 12, "price": 54000, "stripe": "https://buy.stripe.com/14k2a28Xneld99K8wF" }
+      ]
+    },
+    "tri": {
+      "label": "Triathlon",
+      "options": [
+        { "label": "1 month", "months": 1, "price": 8000, "stripe": "" },
+        { "label": "3 months", "months": 3, "price": 22000, "stripe": "" },
+        { "label": "6 months", "months": 6, "price": 40000, "stripe": "" },
+        { "label": "12 months", "months": 12, "price": 72000, "stripe": "" }
+      ]
+    }
+  }
+}

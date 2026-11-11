@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- set pageTitle = (title + " · Pondi Express") if title and not homeTitle else (homeTitle or "Pondi Express") %}
+{%- set pageDesc = description or site.defaultDescription %}
+{%- set canonical = page.url | absoluteUrl(site.url) %}
+{%- set ogImage = (ogImage or cover or "/images/site/social-card.jpg") | absoluteUrl(site.url) %}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:site_name" content="Pondi Express">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}">
+<meta property="og:image" content="{{ ogImage }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/images/site/icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/site/icon-180.png">
+<meta name="theme-color" content="#24343c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap bar">
+  <a class="brand" href="/"><img src="/images/site/icon-180.png" width="40" height="40" alt="">Pondi <span>Express</span></a>
+  <nav class="nav" aria-label="Main">
+    {%- set navItems = [["/", "Home"], ["/about/", "About"], ["/blog/", "Blog"], ["/contact/", "Contact"]] %}
+    {%- for item in navItems %}
+    <a href="{{ item[0] }}"{% if item[0] == "/" %} class="nav-home"{% endif %}{% if page.url == item[0] or (item[0] == "/blog/" and page.url.startsWith("/blog/")) %} aria-current="page"{% endif %}>{{ item[1] }}</a>
+    {%- endfor %}
+    <a class="btn btn-primary" href="/sign-up/">Get started</a>
+  </nav>
+</div></header>
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+{% if not hideBand %}
+<div class="band"><div class="wrap inner">
+  <div><h2>Ready to take your training to the next level?</h2><p>Sign up today, or book a call first if you have questions.</p></div>
+  <div class="ctas"><a class="btn btn-primary" href="/sign-up/">Get started</a><a class="btn btn-ghost" href="/sign-up/#call">Book a call</a></div>
+</div></div>
+{% endif %}
+
+<footer class="site-footer"><div class="wrap inner">
+  <div><p class="motto">Consistency trumps talent!</p><p class="small">Coached by Pondi Express · © <span id="yr">2026</span></p></div>
+  <nav class="links" aria-label="Footer">
+    <a href="/about/">About</a><a href="/blog/">Blog</a><a href="/sign-up/">Get started</a><a href="/contact/">Contact</a>
+    <a href="/termsofuse/">Terms, refunds and privacy</a>
+    <a href="{{ site.instagram }}" rel="noopener">Instagram</a><a href="{{ site.strava }}" rel="noopener">Strava</a>
+  </nav>
+</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>

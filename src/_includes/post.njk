@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+<section><div class="wrap">
+  <article class="article">
+    <header>
+      <p class="eyebrow"><a href="/blog/">Blog</a></p>
+      <h1>{{ title }}</h1>
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }} · Gautam Pothineni</time>
+    </header>
+    <div class="post-body">
+{{ content | safe }}
+    </div>
+    <a class="back" href="/blog/">← All posts</a>
+  </article>
+</div></section>

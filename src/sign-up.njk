@@ -1,0 +1,83 @@
+---
+layout: base.njk
+title: Plans and pricing
+permalink: /sign-up/
+description: "1:1 coaching plans for running, Hyrox and triathlon. No tiers: choose 1, 3, 6 or 12 months. Book a free 30-minute call if you have questions first."
+hideBand: true
+---
+<section><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">Plans and pricing</p>
+    <h1>Ready to get started?</h1>
+    <p class="lede">There are no tiers. Choose your discipline and how long you want to sign up for. Every option gets the same level of coaching and communication.</p>
+  </div>
+  <div class="toggle" role="group" aria-label="Discipline" hidden>
+    <button type="button" aria-pressed="true" data-plan="run">Running &amp; Hyrox</button>
+    <button type="button" aria-pressed="false" data-plan="tri">Triathlon</button>
+  </div>
+  {%- for key in ["run", "tri"] %}
+  {%- set group = site.plans[key] %}
+  {%- set base = group.options[0].price %}
+  <div class="plan-group" data-group="{{ key }}">
+    <h3>{{ group.label }}</h3>
+    <div class="prices">
+      {%- for o in group.options %}
+      {%- set save = ((1 - o.price / (base * o.months)) * 100) | round %}
+      <div class="plan">
+        <p class="eyebrow">{{ o.label }}</p>
+        <p class="amt">{{ o.price | inr }}</p>
+        <p class="per">{% if o.months > 1 %}{{ (o.price / o.months) | round | inr }} a month{% else %}Billed monthly{% endif %}</p>
+        <p class="save">{% if save > 0 %}Save {{ save }}%{% endif %}</p>
+        {%- if o.stripe %}
+        <a class="btn btn-primary" href="{{ o.stripe }}">Subscribe</a>
+        {%- else %}
+        <a class="btn btn-ghost" href="#call">Book a call to sign up</a>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endfor %}
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><p class="eyebrow">Every plan</p><h2>What's included</h2></div>
+  <ul class="list included">
+    <li>Training on Final Surge, written one to two weeks at a time</li>
+    <li>Specific paces and intensities for every session</li>
+    <li>Strength training built into your week</li>
+    <li>Nutrition guidance for training and racing</li>
+    <li>A race-day blueprint before every goal race</li>
+    <li>Direct access by phone, WhatsApp and email</li>
+  </ul>
+</div></section>
+
+<section id="call"><div class="wrap call">
+  <div class="head" style="margin:0">
+    <p class="eyebrow">Not sure yet?</p>
+    <h2>Book a free 30-minute call</h2>
+    <p class="lede">Tell me about your training, your goals and your week. I'll explain how I'd approach it, and you can decide if coaching is right for you.</p>
+    <p><a href="{{ site.calendly }}" rel="noopener">Open the calendar in a new tab</a></p>
+  </div>
+  <div class="calendly-inline-widget" data-url="{{ site.calendly }}?hide_gdpr_banner=1&amp;primary_color=0e7a75"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><p class="eyebrow">Questions</p><h2>Before you sign up</h2></div>
+  <details><summary>Do you coach beginners?</summary><p>Yes. Several of my athletes ran their first 5K within months of starting. The plan starts from where you are now.</p></details>
+  <details><summary>What do I need to start?</summary><p>A GPS watch or phone to record your sessions and a free Final Surge account. After you sign up I'll send a short questionnaire about your history, goals and weekly schedule.</p></details>
+  <details><summary>Can I switch from running to triathlon later?</summary><p>Yes. Your plan moves to the triathlon rate from your next billing period.</p></details>
+  <details><summary>What if I get injured?</summary><p>Your training is adjusted around the injury, including return-to-run and strength work, and I'll point you to a physio when you need one. If an injury or health issue stops you training altogether, I'll review it and can extend your plan by up to 3 months.</p></details>
+  <details><summary>Can I get a refund?</summary><p>Subscriptions are non-refundable and run until the end of the billing period. The full policy is on the <a href="/termsofuse/">terms page</a>.</p></details>
+</div></section>
+
+<script>
+(function(){
+  var t=document.querySelector('.toggle');t.hidden=false;
+  function show(k){document.querySelectorAll('[data-group]').forEach(function(g){g.hidden=g.dataset.group!==k});
+    t.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.plan===k)})}
+  t.addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(b.dataset.plan)});
+  show(location.hash==='#triathlon'?'tri':'run');
+})();
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>

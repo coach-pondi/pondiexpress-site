@@ -1,0 +1,13 @@
+{
+  "name": "pondiexpress-site",
+  "private": true,
+  "description": "pondiexpress.com \u2014 Coached by Pondi Express",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.7"
+  },
+  "type": "module"
+}

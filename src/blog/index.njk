@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Blog
+permalink: /blog/
+description: "Race reports and notes on training from Gautam at Pondi Express: Ironman 70.3 Goa, the Mumbai Marathon and the Hong Kong trails."
+---
+<section><div class="wrap">
+  <div class="head"><p class="eyebrow">Blog</p><h1>Race reports and notes</h1></div>
+  <div class="posts">
+    {%- for post in collections.posts | reverse %}
+    <a class="post-row" href="{{ post.url }}">
+      {%- if post.data.cover %}<img src="{{ post.data.cover }}" alt="" loading="lazy">{% endif %}
+      <div>
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+        <h2>{{ post.data.title }}</h2>
+        <p class="muted">{{ post.data.description }}</p>
+      </div>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>

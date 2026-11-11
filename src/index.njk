@@ -1,0 +1,93 @@
+---
+layout: base.njk
+homeTitle: "Pondi Express · 1:1 coaching for runners, Hyrox athletes and triathletes"
+description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified running coach and Precision Nutrition Level 1 coach. Running, Hyrox and triathlon, coaching athletes since 2020."
+---
+<section><div class="wrap hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Coached by Pondi Express</p>
+    <h1>1:1 coaching for runners, Hyrox athletes and triathletes</h1>
+    <p class="lede">I've been coaching endurance athletes since 2020, from people running their first 5K to marathoners, ultra runners, Hyrox racers and 70.3 triathletes. Every plan is written for one athlete, around their work, family and goals.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="/sign-up/">See plans and pricing</a>
+      <a class="btn btn-ghost" href="/sign-up/#call">Book a free call</a>
+    </div>
+    <div class="creds">
+      <span class="chip">RRCA certified running coach</span>
+      <span class="chip">Precision Nutrition Level 1</span>
+      <span class="chip">Coaching since 2020</span>
+    </div>
+  </div>
+  <img class="pic" src="/images/site/gautam-swim-exit.jpg" width="1100" height="1650" alt="Gautam running out of the sea at a triathlon swim exit" fetchpriority="high">
+</div></section>
+
+<section><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">What I coach</p>
+    <h2>Three disciplines, one way of coaching</h2>
+  </div>
+  <div class="grid3">
+    <div class="disc">
+      <h3>Running</h3>
+      <p class="price">From {{ site.plans.run.options[0].price | inr }} a month</p>
+      <ul><li>5K to marathon, road and trail</li><li>Trail races and ultras</li><li>First races and PB attempts</li></ul>
+    </div>
+    <div class="disc">
+      <h3>Hyrox</h3>
+      <p class="price">From {{ site.plans.run.options[0].price | inr }} a month</p>
+      <ul><li>Running and station work in one plan</li><li>Singles and doubles</li><li>Race splits and pacing for each station</li></ul>
+    </div>
+    <div class="disc">
+      <h3>Triathlon</h3>
+      <p class="price">From {{ site.plans.tri.options[0].price | inr }} a month</p>
+      <ul><li>Sprint, Olympic and 70.3</li><li>Swim, bike and run in one weekly plan</li><li>Transitions and race nutrition</li></ul>
+    </div>
+  </div>
+  <p class="note">Strength training and nutrition guidance are part of every plan. I don't sell them separately because they work best when they're planned around your training.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">How coaching works</p>
+    <h2>Holistic coaching, focused on you</h2>
+  </div>
+  <div class="how">
+    <div><h3>Tailored to you</h3><p>No two athletes have the same work and personal commitments, training history or injury history, so no two plans are the same. Each week is planned around your lifestyle, ability and goals, with specific paces and intensities for every session so you know exactly how hard to work.</p></div>
+    <div><h3>Planned a week or two at a time</h3><p>Life changes quickly and training has to change with it. I don't hand over months of training and say good luck. You get one to two weeks at a time on Final Surge, based on your current fitness and what your schedule looks like.</p></div>
+    <div><h3>Educate and empower</h3><p>I want you to know why you're doing each session, so you understand the training process, learn more about your body and become a more knowledgeable athlete.</p></div>
+    <div><h3>Ongoing communication</h3><p>No goal is too ambitious and no question is too silly. You'll have my phone number and email, and can reach me by call, WhatsApp, email or through the app whenever you have questions.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap bp">
+  <div class="head" style="margin:0">
+    <p class="eyebrow">For every goal race</p>
+    <h2>A race-day blueprint</h2>
+    <p class="lede">Before each goal race you get a personalised plan for the day. It covers pace for each section of the course based on the terrain, when to take each gel and how much to drink, and the logistics from expo to start line. You go into the race knowing exactly what you're going to do.</p>
+  </div>
+  <div class="sheet" aria-label="Example race-day blueprint">
+    <div class="sheet-top"><b>Half Marathon Blueprint</b><span class="tag">Example · Target 1:58</span></div>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Section</th><th scope="col">Pace</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">0–5 km</td><td class="mono">5:40/km</td><td>Settle in. Let the crowd go.</td></tr>
+        <tr><td class="mono">5–10 km</td><td class="mono">5:35/km</td><td>Flat section, find your rhythm</td></tr>
+        <tr><td class="mono">10–16 km</td><td class="mono">5:35/km</td><td>Flyover climb: run by effort, not pace</td></tr>
+        <tr><td class="mono">16–21.1 km</td><td class="mono">5:25/km</td><td>Lift the pace if you feel good</td></tr>
+      </tbody>
+    </table></div>
+    <div class="fuel"><strong>Fuel:</strong> gel at <span class="mono">6, 12 and 17 km</span> (45 g carbs each), water at every aid station.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">2026 season</p>
+    <h2>Where Pondi Express athletes have raced</h2>
+  </div>
+  <div class="races">
+    {%- for r in ["Chicago Marathon","New York City Marathon","Amsterdam Marathon","Vienna Marathon","Manchester Marathon","Sydney Marathon","Hyderabad Marathon","Valencia Half","Paris Half","Barcelona Half","Munich Half","Gold Coast Half","Vilnius Half","Niagara Falls Half","Delhi Half Marathon","Toronto Island 10K","Hyrox Delhi"] %}
+    <span class="race">{{ r }}</span>
+    {%- endfor %}
+  </div>
+</div></section>
