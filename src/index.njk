@@ -1,13 +1,13 @@
 ---
 layout: base.njk
-homeTitle: "Pondi Express · 1:1 coaching for runners, Hyrox athletes and triathletes"
-description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified running coach and Precision Nutrition Level 1 coach. Running, Hyrox and triathlon, coaching athletes since 2020."
+homeTitle: "Pondi Express · 1:1 coaching for runners, triathletes and Hyrox athletes"
+description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified running coach and Precision Nutrition Level 1 coach. Road, trail and ultra running, triathlon and Hyrox, coaching athletes since 2019."
 ---
 <section><div class="wrap hero">
   <div class="hero-copy">
     <p class="eyebrow">Coached by Pondi Express</p>
-    <h1>1:1 coaching for runners, Hyrox athletes and triathletes</h1>
-    <p class="lede">I've been coaching endurance athletes since 2020, from people running their first 5K to marathoners, ultra runners, Hyrox racers and 70.3 triathletes. Every plan is written for one athlete, around their work, family and goals.</p>
+    <h1>1:1 coaching for road, trail and ultra runners, triathletes and Hyrox athletes</h1>
+    <p class="lede">I've been coaching endurance athletes since 2019, from people running their first 5K to marathoners, trail and ultra runners, triathletes and Hyrox racers. Every plan is written and truly personalised for the athlete after considering their work, family and goals.</p>
     <div class="ctas">
       <a class="btn btn-primary" href="/sign-up/">See plans and pricing</a>
       <a class="btn btn-ghost" href="/sign-up/#call">Book a free call</a>
@@ -15,7 +15,7 @@ description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified runni
     <div class="creds">
       <span class="chip">RRCA certified running coach</span>
       <span class="chip">Precision Nutrition Level 1</span>
-      <span class="chip">Coaching since 2020</span>
+      <span class="chip">Coaching since 2019</span>
     </div>
   </div>
   <img class="pic" src="/images/site/gautam-swim-exit.jpg" width="1100" height="1650" alt="Gautam running out of the sea at a triathlon swim exit" fetchpriority="high">
@@ -30,20 +30,20 @@ description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified runni
     <div class="disc">
       <h3>Running</h3>
       <p class="price">From {{ site.plans.run.options[0].price | inr }} a month</p>
-      <ul><li>5K to marathon, road and trail</li><li>Trail races and ultras</li><li>First races and PB attempts</li></ul>
-    </div>
-    <div class="disc">
-      <h3>Hyrox</h3>
-      <p class="price">From {{ site.plans.run.options[0].price | inr }} a month</p>
-      <ul><li>Running and station work in one plan</li><li>Singles and doubles</li><li>Race splits and pacing for each station</li></ul>
+      <ul><li>5K to marathon, road and trail</li><li>Trail races and ultras</li><li>First races, PB attempts and podiums</li></ul>
     </div>
     <div class="disc">
       <h3>Triathlon</h3>
       <p class="price">From {{ site.plans.tri.options[0].price | inr }} a month</p>
       <ul><li>Sprint, Olympic and 70.3</li><li>Swim, bike and run in one weekly plan</li><li>Transitions and race nutrition</li></ul>
     </div>
+    <div class="disc">
+      <h3>Hyrox</h3>
+      <p class="price">From {{ site.plans.run.options[0].price | inr }} a month</p>
+      <ul><li>Running and station work in one plan</li><li>Singles and doubles</li><li>Race splits and pacing for each station</li></ul>
+    </div>
   </div>
-  <p class="note">Strength training and nutrition guidance are part of every plan. I don't sell them separately because they work best when they're planned around your training.</p>
+  <p class="note">Strength training and nutrition guidance form part of every plan. My coaching philosophy is that you can't out-train bad nutrition, poor sleep or a lack of strength work. It all comes together, which is why they are part of the coaching as a whole and not sold separately.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -82,11 +82,11 @@ description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified runni
 
 <section><div class="wrap">
   <div class="head">
-    <p class="eyebrow">2026 season</p>
+    <p class="eyebrow">Since 2019</p>
     <h2>Where Pondi Express athletes have raced</h2>
   </div>
   <div class="races">
-    {%- for r in ["Chicago Marathon","New York City Marathon","Amsterdam Marathon","Vienna Marathon","Manchester Marathon","Sydney Marathon","Hyderabad Marathon","Valencia Half","Paris Half","Barcelona Half","Munich Half","Gold Coast Half","Vilnius Half","Niagara Falls Half","Delhi Half Marathon","Toronto Island 10K","Hyrox Delhi"] %}
+    {%- for r in ["Comrades Marathon","Tokyo Marathon","Berlin Marathon","London Marathon","Chicago Marathon","New York City Marathon","Amsterdam Marathon","Vienna Marathon","Manchester Marathon","Sydney Marathon","Mumbai Marathon","Hyderabad Marathon","Valencia Half","Paris Half","Barcelona Half","Munich Half","Gold Coast Half","Vilnius Half","Niagara Falls Half","Delhi Half Marathon","Toronto Island 10K","Chiang Mai by UTMB","Sinhagad Epic","Hyrox Delhi","Hyrox Bengaluru"] %}
     <span class="race">{{ r }}</span>
     {%- endfor %}
   </div>
