@@ -36,7 +36,7 @@ export async function onRequestPost({ request, env }) {
   const ip = request.headers.get("CF-Connecting-IP") || "";
   const verify = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
     method: "POST",
-    body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: String(data.token || ""), remoteip: ip }),
+    body: new URLSearchParams({ secret: String(env.TURNSTILE_SECRET).trim(), response: String(data.token || ""), remoteip: ip }),
   }).then((r) => r.json()).catch(() => ({ success: false }));
   if (!verify.success) {
     const codes = (verify["error-codes"] || []).join(", ") || "no-response";

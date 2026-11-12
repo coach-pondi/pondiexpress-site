@@ -80,7 +80,7 @@
 
   loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    key = new FormData(loginForm).get("key");
+    key = String(new FormData(loginForm).get("key") || "").trim();
     load();
   });
 

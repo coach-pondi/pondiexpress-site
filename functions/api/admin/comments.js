@@ -4,13 +4,14 @@
 import { ensureSchema, json, sameSecret, configError } from "../../_lib/comments.js";
 
 async function authorised(request, env) {
-  if (!env.ADMIN_KEY) return false;
-  return sameSecret(request.headers.get("X-Admin-Key") || "", env.ADMIN_KEY);
+  if (!env.ADMIN_KEY) return false; // handled by checkSetup
+  return sameSecret((request.headers.get("X-Admin-Key") || "").trim(), String(env.ADMIN_KEY).trim());
 }
 
 export async function onRequestGet({ request, env }) {
   const problem = configError(env);
   if (problem) return json({ error: problem }, 503);
+  if (!env.ADMIN_KEY) return json({ error: "The admin password isn't set up on this version of the site yet (ADMIN_KEY)." }, 503);
   if (!(await authorised(request, env))) return json({ error: "Wrong password." }, 401);
   await ensureSchema(env.DB);
   const status = new URL(request.url).searchParams.get("status") === "approved" ? "approved" : "pending";
@@ -24,6 +25,7 @@ export async function onRequestGet({ request, env }) {
 export async function onRequestPost({ request, env }) {
   const problem = configError(env);
   if (problem) return json({ error: problem }, 503);
+  if (!env.ADMIN_KEY) return json({ error: "The admin password isn't set up on this version of the site yet (ADMIN_KEY)." }, 503);
   if (!(await authorised(request, env))) return json({ error: "Wrong password." }, 401);
   let data;
   try { data = await request.json(); } catch { return json({ error: "Bad request." }, 400); }
