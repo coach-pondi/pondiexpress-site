@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Comment approvals
+permalink: /comments-admin/
+noindex: true
+hideBand: true
+eleventyExcludeFromCollections: true
+---
+<section><div class="wrap admin">
+  <div class="head"><p class="eyebrow">Blog</p><h1>Comment approvals</h1></div>
+  <form class="admin-login" id="login">
+    <label>Admin password<input type="password" name="key" autocomplete="current-password" required></label>
+    <button class="btn btn-primary" type="submit">Open</button>
+  </form>
+  <p class="comment-status" id="admin-status" role="status" aria-live="polite"></p>
+  <div id="admin-panel" hidden>
+    <div class="toggle" role="group" aria-label="Show">
+      <button type="button" data-status="pending" aria-pressed="true">Waiting for approval</button>
+      <button type="button" data-status="approved" aria-pressed="false">Approved</button>
+    </div>
+    <div class="comment-list" id="admin-list"></div>
+  </div>
+</div></section>
+<script src="/js/comments-admin.js?v={{ build.version }}" defer></script>

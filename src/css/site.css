@@ -1,7 +1,7 @@
 /* Pondi Express — teal and slate, condensed display type borrowed from race bibs */
 :root {
   --bg: #f5f8f8; --surface: #ffffff; --ink: #1d2a31; --muted: #56666e; --line: #d8e2e3;
-  --teal: #0e7a75; --teal-ink: #ffffff; --teal-soft: #e0f0ee; --slate: #24343c; --slate-ink: #eef4f4;
+  --teal: #0e7a75; --teal-ink: #ffffff; --teal-soft: #e0f0ee; --slate: #24343c; --slate-ink: #eef4f4; --danger: #a4372a;
   --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
   --body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -303,3 +303,37 @@ details p { margin: 0 0 16px; }
 @media (max-width: 820px) {
   .hero .pic { aspect-ratio: auto; height: auto; max-height: none; object-fit: contain; }
 }
+
+/* blog comments */
+.comments { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); display: grid; gap: 20px; }
+.comments h2 { font-size: var(--fs-h2); }
+.comment-count { color: var(--muted); font-weight: 600; }
+.comment-list { display: grid; gap: 14px; }
+.comment { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: .6em; overflow-wrap: anywhere; }
+.comment p { margin: 0; }
+.comment-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.comment-head time { color: var(--muted); font-size: var(--fs-sm); }
+.comment-form { display: grid; gap: 14px; margin-top: 8px; }
+.comment-form h3 { font-size: var(--fs-h3); }
+.comment-form label { display: grid; gap: 6px; font-weight: 600; font-size: var(--fs-sm); }
+.comment-form input, .comment-form textarea { font: inherit; font-weight: 400; font-size: var(--fs-md); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; width: 100%; box-sizing: border-box; }
+.comment-form textarea { resize: vertical; min-height: 120px; }
+.comment-form input:focus-visible, .comment-form textarea:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+.comment-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.comment-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.comment-actions p { margin: 0; }
+.comment-form button[disabled] { opacity: .6; cursor: wait; }
+.comment-status { margin: 0; font-size: var(--fs-sm); }
+.comment-status.ok { color: var(--teal); font-weight: 600; }
+.comment-status.error { color: var(--danger); font-weight: 600; }
+
+/* comment approval page */
+.admin { max-width: 760px; margin: 0 auto; display: grid; gap: 24px; }
+.admin-login { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
+.admin-login label { display: grid; gap: 6px; font-weight: 600; font-size: var(--fs-sm); flex: 1 1 240px; }
+.admin-login input { font: inherit; font-size: var(--fs-md); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: var(--surface); color: var(--ink); }
+.admin .comment-post { font-size: var(--fs-sm); color: var(--muted); }
+.admin .comment-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.admin .comment-buttons .btn { padding: 8px 16px; font-size: var(--fs-sm); }
+.admin .btn-danger { background: transparent; color: var(--danger); border-color: var(--danger); }
+[hidden] { display: none !important; }

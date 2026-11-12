@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /comments-admin/
 
 Sitemap: https://www.pondiexpress.com/sitemap.xml

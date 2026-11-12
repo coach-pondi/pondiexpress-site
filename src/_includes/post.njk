@@ -11,6 +11,23 @@ layout: base.njk
     <div class="post-body">
 {{ content | safe }}
     </div>
+    <section class="comments" id="comments" data-post="{{ page.url }}" aria-labelledby="comments-title">
+      <h2 id="comments-title">Comments <span class="comment-count"></span></h2>
+      <div class="comment-list"><p class="muted">Loading comments…</p></div>
+      {%- if site.turnstileSiteKey %}
+      <form class="comment-form" novalidate>
+        <h3>Leave a comment</h3>
+        <label>Name<input name="name" maxlength="60" autocomplete="name" required></label>
+        <label>Comment<textarea name="body" rows="5" maxlength="3000" required></textarea></label>
+        <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="cf-turnstile" data-sitekey="{{ site.turnstileSiteKey }}" data-theme="light" data-size="flexible"></div>
+        <div class="comment-actions"><button class="btn btn-primary" type="submit">Post comment</button><p class="small muted">Comments show up after I approve them.</p></div>
+        <p class="comment-status" role="status" aria-live="polite"></p>
+      </form>
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+      {%- endif %}
+    </section>
+    <script src="/js/comments.js?v={{ build.version }}" defer></script>
     <a class="back" href="/blog/">← All posts</a>
   </article>
 </div></section>
