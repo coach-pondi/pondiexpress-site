@@ -29,7 +29,14 @@ The coaching website for Gautam Pothineni (Coached by PondiExpress), replacing t
 ## Booking calls
 - Google Calendar appointment schedule (`site.googleBooking`, short link https://calendar.app.google/AvJo1LqW9PgvkTWg8) is embedded on the Plans page. Calendly (`site.calendly`) is only used if `googleBooking` is empty.
 
+## Blog comments
+- Built in: Cloudflare Pages Functions (`functions/api/`) + D1 database `pondiexpress-comments` (binding `DB`). Table is created automatically on first use.
+- Spam: Turnstile (site key `site.turnstileSiteKey`, secret `TURNSTILE_SECRET`) + honeypot + 5 comments per 10 minutes per visitor.
+- Every comment is pending until Gautam approves it at `/comments-admin/` (password = `ADMIN_KEY` secret, set by Gautam, never shared).
+- Bindings and secrets must exist for both Production and Preview in Cloudflare; a redeploy is needed after changing them.
+- No email alerts yet: Cloudflare Email Routing would touch the Google Workspace MX records, so don't use it.
+
 ## Pending
-- Live on Cloudflare Pages (project `pondiexpress`, build `npm run build`, output `_site`, `NODE_VERSION=22`) at pondiexpress.com and www.pondiexpress.com since 11 Nov 2026. DNS is on Cloudflare (nameservers aldo/lila); the domain registration is still with Squarespace Domains until renewal. Google Workspace MX and SPF records live in Cloudflare DNS: never delete them. DKIM not set up yet.
+- Live on Cloudflare Pages (project `pondiexpress`, build `npm run build`, output `_site`, `NODE_VERSION=22`) at pondiexpress.com and www.pondiexpress.com since 11 Nov 2026. DNS is on Cloudflare (nameservers aldo/lila); the domain registration is still with Squarespace Domains until renewal. Google Workspace MX and SPF records live in Cloudflare DNS: never delete them. DKIM is set up.
 - New athlete testimonials to add when Gautam sends them.
 - Squarespace plan auto-renew is off; it runs until May 2027 as a fallback.
