@@ -171,6 +171,12 @@ details p { margin-top: 10px; color: var(--muted); max-width: 65ch; }
 .post-body figure { margin: .6em 0; display: grid; gap: 8px; }
 .post-body figure img { border-radius: 8px; margin-inline: auto; max-height: 85vh; width: auto; }
 .post-body figcaption { font-size: var(--fs-sm); color: var(--muted); text-align: center; }
+.post-body figure video { border-radius: 8px; margin-inline: auto; max-height: 85vh; width: auto; max-width: 100%; height: auto; background: var(--line); }
+.post-body .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+.post-body .pair figure { margin: 0; }
+.post-body .pair figure img { width: 100%; height: auto; max-height: none; }
+.post-body th.num, .post-body td.num { text-align: right; padding-right: 0; padding-left: 12px; }
+.post-body tr.total td { font-weight: 700; border-top: 2px solid var(--ink, currentColor); }
 .back { display: inline-block; margin-top: 48px; font-weight: 600; }
 
 .legal { max-width: 760px; }
