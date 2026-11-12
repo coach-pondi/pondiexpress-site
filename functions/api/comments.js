@@ -38,7 +38,11 @@ export async function onRequestPost({ request, env }) {
     method: "POST",
     body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: String(data.token || ""), remoteip: ip }),
   }).then((r) => r.json()).catch(() => ({ success: false }));
-  if (!verify.success) return json({ error: "The robot check didn't go through. Please try again." }, 400);
+  if (!verify.success) {
+    const codes = (verify["error-codes"] || []).join(", ") || "no-response";
+    console.log("turnstile failed", codes);
+    return json({ error: "The robot check didn't go through. Please try again. (" + codes + ")" }, 400);
+  }
 
   await ensureSchema(env.DB);
   const ipHash = await sha256(ip + "|" + env.TURNSTILE_SECRET);
