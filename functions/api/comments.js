@@ -39,9 +39,13 @@ export async function onRequestPost({ request, env }) {
     body: new URLSearchParams({ secret: String(env.TURNSTILE_SECRET).trim(), response: String(data.token || ""), remoteip: ip }),
   }).then((r) => r.json()).catch(() => ({ success: false }));
   if (!verify.success) {
-    const codes = (verify["error-codes"] || []).join(", ") || "no-response";
+    const list = verify["error-codes"] || [];
+    const codes = list.join(", ") || "no-response";
     console.log("turnstile failed", codes);
-    return json({ error: "The robot check didn't go through. Please try again. (" + codes + ")" }, 400);
+    // A problem with our own key setup is not the reader's fault: keep the comment
+    // (it still waits for approval) instead of turning the reader away.
+    const ourFault = list.some((c) => c === "invalid-input-secret" || c === "missing-input-secret");
+    if (!ourFault) return json({ error: "The robot check didn't go through. Please try again. (" + codes + ")" }, 400);
   }
 
   await ensureSchema(env.DB);
