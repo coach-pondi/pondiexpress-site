@@ -1,5 +1,6 @@
-// Temporary: lists which setting names this deployment can see (names only, never values).
+// Temporary: shows which secrets this deployment can see and how long they are (never the values).
 export async function onRequestGet({ env }) {
-  const names = Object.keys(env).map((k) => JSON.stringify(k));
-  return new Response(JSON.stringify({ names }), { headers: { "content-type": "application/json", "cache-control": "no-store" } });
+  const out = {};
+  for (const k of ["ADMIN_KEY", "TURNSTILE_SECRET"]) out[k] = { type: typeof env[k], length: typeof env[k] === "string" ? env[k].length : null };
+  return new Response(JSON.stringify(out), { headers: { "content-type": "application/json", "cache-control": "no-store" } });
 }
