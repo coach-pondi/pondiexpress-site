@@ -95,6 +95,7 @@ description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified runni
   <div class="head">
     <p class="eyebrow">Since 2019</p>
     <h2>Where PondiExpress athletes have raced</h2>
+    <p>Some of the bigger races my athletes have done since 2019, along with plenty of local races that aren't listed here.</p>
   </div>
   {%- set races =  ["Comrades Marathon","Tokyo Marathon","Berlin Marathon","London Marathon","Chicago Marathon","New York City Marathon","Amsterdam Marathon","Vienna Marathon","Manchester Marathon","Sydney Marathon","Mumbai Marathon","Hyderabad Marathon","Valencia Half","Paris Half","Barcelona Half","Munich Half","Gold Coast Half","Vilnius Half","Niagara Falls Half","Delhi Half Marathon","Toronto Island 10K","Chiang Mai by UTMB","Malnad Ultra","Border 100","Solang SkyUltra","Sinhagad Epic","Hyrox Delhi","Hyrox Bengaluru","Hyrox Mumbai"] %}
   <div class="races" id="races">
@@ -102,7 +103,7 @@ description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified runni
     <span class="race">{{ r }}</span>
     {%- endfor %}
   </div>
-  <button type="button" class="races-more btn btn-ghost" aria-controls="races" aria-expanded="false" hidden>Show all {{ races | length }} races</button>
+  <button type="button" class="races-more btn btn-ghost" aria-controls="races" aria-expanded="false" hidden>Show more races</button>
   <script>
   (function(){
     var list=document.getElementById('races'),btn=document.querySelector('.races-more');
@@ -110,7 +111,7 @@ description: "1:1 endurance coaching from Gautam Pothineni, RRCA certified runni
     btn.addEventListener('click',function(){
       var open=list.classList.toggle('collapsed')===false;
       btn.setAttribute('aria-expanded',open);
-      btn.textContent=open?'Show fewer':'Show all {{ races | length }} races';
+      btn.textContent=open?'Show fewer':'Show more races';
     });
   })();
   </script>
